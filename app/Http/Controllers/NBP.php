@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\NBPAPI;
+use App\Models\Currency;
 
 class NBP extends Controller
 {
@@ -15,7 +16,7 @@ class NBP extends Controller
     public function index()
     {
 
-        return view('welcome', ['nbpapi' => '']);
+        return view('welcome', ['nbpapi' => Currency::all()]);
     }
 
     public function update(NBPAPI $nbpapi)
