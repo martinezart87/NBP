@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\NBPAPI;
 
 class NBP extends Controller
 {
@@ -13,6 +14,7 @@ class NBP extends Controller
      */
     public function index()
     {
+
         return view('welcome');
     }
 
@@ -23,7 +25,7 @@ class NBP extends Controller
      */
     public function create()
     {
-        //
+        return abort(404);
     }
 
     /**
@@ -66,9 +68,9 @@ class NBP extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, NBPAPI $nbpapi)
     {
-        //
+        return view('welcome', ['nbpapi' => $nbpapi->getData()]);
     }
 
     /**
