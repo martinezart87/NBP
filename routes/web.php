@@ -14,4 +14,6 @@ use App\Http\Controllers\NBP;
 |
 */
 
-Route::resource('/', NBP::class);
+// Route::resource('/', NBP::class);
+Route::get   ('/', [NBP::class, 'index']);
+Route::get   ('/update', [NBP::class, 'update']);
