@@ -30,7 +30,7 @@ class NBPAPI
                 'exchange_rate' => round(floatval($item['mid']), 2),
             ];
         }
-        Currency::upsert($data, ['name'], ['currency_code'], ['exchange_rate']);
+        Currency::upsert($data, ['currency_code'], ['exchange_rate']);
         return $data;
     }
 }
