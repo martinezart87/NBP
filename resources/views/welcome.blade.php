@@ -28,6 +28,8 @@
                         <th scope="col">Nazwa waluty</th>
                         <th scope="col">Kod</th>
                         <th scope="col">Wartość kursu</th>
+                        <th scope="col">Ostatnia aktualizacja</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -36,6 +38,8 @@
                             <th>{{ $item->name }} </th>
                             <td>{{ $item->currency_code }}</td>
                             <td>{{ $item->exchange_rate }} PLN</td>
+                            <td>{{ $item->updated_at }}</td>
+
                         </tr>
                     @endforeach
                 </tbody>
