@@ -20,7 +20,8 @@ class NBP extends Controller
 
     public function update(NBPAPI $nbpapi)
     {
-        return view('welcome', ['nbpapi' => $nbpapi->getData()]);
+        $nbpapi->getData();
+        return redirect('/');
     }
 
 }
