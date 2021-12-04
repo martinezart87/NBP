@@ -15,7 +15,7 @@ class NBP extends Controller
     public function index()
     {
 
-        return view('welcome');
+        return view('welcome', ['nbpapi' => '']);
     }
 
     /**
@@ -68,7 +68,7 @@ class NBP extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, NBPAPI $nbpapi)
+    public function update(NBPAPI $nbpapi)
     {
         return view('welcome', ['nbpapi' => $nbpapi->getData()]);
     }

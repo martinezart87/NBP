@@ -21,7 +21,8 @@
         </div>
     </nav>
     <div class="container">
-        <button class="btn btn-warning my-2 my-sm-0" type="submit">Zaktualizuj</button>
+        {{-- <button class="btn btn-warning my-2 my-sm-0" type="submit">Zaktualizuj</button> --}}
+        <a href="{{ url('/update/') }}" class="btn btn-warning my-2 my-sm-0">Zaktualizuj</a>
 
         <table class="table">
             <thead class="thead-dark">
@@ -53,6 +54,9 @@
                 </tr>
             </tbody>
         </table>
+
+            {{ $nbpapi }}
+
     </div>
 
 </body>
