@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Http;
+
 class NBPAPI
 {
     protected $URL;
@@ -13,6 +15,7 @@ class NBPAPI
 
     public function getData()
     {
-        return $this->URL;
+        $response = Http::get($this->URL);
+        return $response;
     }
 }
