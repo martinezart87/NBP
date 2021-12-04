@@ -13,7 +13,7 @@ class NBP extends Controller
      */
     public function index()
     {
-        //
+        return view('welcome');
     }
 
     /**
