@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use App\Services\NBPAPI;
 use App\Models\Currency;
+use Illuminate\Support\Facades\Redirect;
 
 class NBP extends Controller
 {
@@ -21,8 +22,9 @@ class NBP extends Controller
 
     public function update(NBPAPI $nbpapi)
     {
-        $nbpapi->getData();
-        return redirect('/');
+        $data = $nbpapi->getData();
+        return redirect('/')->with('message', $data);
+        // return redirect('/');
     }
 
 }

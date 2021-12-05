@@ -21,10 +21,18 @@
         <div style="padding-top: 20px; padding-bottom: 20px">
             <a href="{{ url('/update/') }}" class="btn btn-warning my-2 my-sm-0">Zaktualizuj</a>
         </div>
+
+        @if (session('message'))
+            <div class="alert alert-info">
+                {{ session('message') }}
+            </div>
+        @endif
+
         <div class="row">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
+                        <th scope="col">L.p.</th>
                         <th scope="col">Nazwa waluty</th>
                         <th scope="col">Kod</th>
                         <th scope="col">Wartość kursu</th>
@@ -35,9 +43,10 @@
                 <tbody>
                     @foreach ($nbpapi as $item)
                         <tr>
+                            <th>{{ $loop->index + 1 }}.</th>
                             <th>{{ $item->name }} </th>
                             <td>{{ $item->currency_code }}</td>
-                            <td>{{ $item->exchange_rate }} PLN</td>
+                            <td>{{ number_format(round($item->exchange_rate, 2), 2) }} PLN</td>
                             <td>{{ $item->updated_at }}</td>
 
                         </tr>
