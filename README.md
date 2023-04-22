@@ -10,4 +10,4 @@ Aplikacja wyświetla, pobiera i aktualizuje kursy walut. Jeżeli dana waluta ju�
 - MySQL
 
 ## Demo:
-https://mswierczek.sldc.pl/NBP/
+http://nbp.mrbl.pl/
